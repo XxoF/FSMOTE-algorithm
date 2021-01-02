@@ -1,0 +1,31 @@
+- Giới thiệu: 
+	+ Network anomaly trafic detection sẽ quan tâm vào phần asnormal traffic data(minority samples). 
+	+ Tuy nhiên các thuật toán Imbalanced Learning hiện tại chỉ hỗ trợ để làm việc với majority samples.
+	+ Có nhiều cách được đưa ra khi gặp unbalanced data:
+		. avoid the imbalanced of network traffic data.[1]
+		. increasing the number of minority sample(oversampling technology).
+
+	+ The simplest oversampling method: simple random sampling => random replication of minority sample but the new samples do not add mỏe information.
+		=> SMOTE algorithm has become the mainstream algorithm in imbalanced learning data enhancement.
+
+	+ SMOTE variants and applications in different scenarios:
+		""" Check lại đoạn này, lựa chọn những cái điểm nhấn và phù hợp"""
+
+		. The classic SMOTE has certain drawback: have proposed many SMOTE-based variants in continous research and practice.
+
+		. Borderline-SMOTE: the boundary of the minority samples => avoid algorithm will overlap with the majority samples.[3]
+	
+		. The resennce of redundant borderline instances and outliers severely catalyzes the effect of class imbalace.[4]
+
+		. Algorithms to generate effective weight values for minority data samples.[5,6]
+
+		. Borderline kernel based over-sampling: derive a kernel-based synthetic overspampling based on borderline instances. [7]
+		
+		. MOT2LD: maps each training sample into a low-dimensional space and then clusters their low-dimensional representations. [8]
+
+	+ SMOTE and its variants problems:
+		. New samples is prone to the generation of noisy samples(may occur in the majority samples areas). 
+		. Samples are synthesized without considering the informational importance of the original sample.
+		. Requires more parameter adjustment, and the performance is unstable.
+
+	==> FSMOTE oversampling: combines a stable FINCH clustering method without parameters and the use of multi-layer perceptron clearning when synthesizing new samples.
